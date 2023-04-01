@@ -1,25 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
-
 import { AppComponent } from './app.component';
-import { CustomerListComponent } from './customer-list/customer-list.component';
-import { CustomerEditComponent } from './customer-edit/customer-edit.component';
-import { CustomerDeleteComponent } from './customer-delete/customer-delete.component';
+import { CustomerService } from './services/customer.service'
+import { CustomerComponent } from './customers/customer.component';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CustomerListComponent,
-    CustomerEditComponent,
-    CustomerDeleteComponent
-  ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    CustomerComponent,
+    CustomerDetailsComponent
+  ],
+  providers: [CustomerService],
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}

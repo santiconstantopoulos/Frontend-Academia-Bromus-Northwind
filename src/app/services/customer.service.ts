@@ -1,38 +1,49 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 import { Customer } from '../models/customer';
 
-const apiUrl = 'http://localhost:5000/api/customers';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class CustomerService {
-  [x: string]: any;
 
-  constructor(private http: HttpClient) { }
+  private customerUrl = 'https://localhost:7192/api/customers';
 
-  getCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(apiUrl);
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  getCustomer(id: number): Observable<Customer> {
-    const url = `${apiUrl}/${id}`;
-    return this.http.get<Customer>(url);
+  constructor(private http: HttpClient) {
+
+    let response = http.get(this.customerUrl);
+    response.subscribe((data) => console.log(data));
+    
   }
 
-  createCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(apiUrl, customer);
+  public getCustomers(): Observable<Customer[]> {
+    return this.http.get<Customer[]>(this.customerUrl);
   }
+
+
 
   updateCustomer(customer: Customer): Observable<Customer> {
-    const url = `${apiUrl}/${customer.id}`;
-    return this.http.put<Customer>(url, customer);
+    const url = `${this.customerUrl}/${customer.customerId}`;
+    const { customerId, ...rest } = customer;
+    return this.http.put<Customer>(url, rest);
+  }
+  
+  public deleteCustomer(customerId: string): Observable<any> {
+    const url = `${this.customerUrl}/${customerId}`; 
+    return this.http.delete<void>(url, this.httpOptions);
   }
 
-  deleteCustomer(id: number): Observable<any> {
-    const url = `${this['apiUrl']}/${id}`;
-    return this.http.delete(url);
+  public addCustomer(customer: Customer): Observable<Customer> {
+    return this.http.post<Customer>(this.customerUrl, customer);
   }
+
 }
+

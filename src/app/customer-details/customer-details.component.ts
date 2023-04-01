@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Customer } from '../models/customer';
+import { CustomerService } from '../services/customer.service';
 
 @Component({
   selector: 'app-customer-details',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./customer-details.component.css']
 })
 export class CustomerDetailsComponent {
+  @Input() customer?: Customer;
 
 }

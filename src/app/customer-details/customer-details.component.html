@@ -1,1 +1,19 @@
-<p>customer-details works!</p>
+<div *ngIf="customer" class="form-group">
+  <h2>{{ customer.companyName }}</h2>
+  <div>
+    <label>Company Name:</label>
+    <input [(ngModel)]="customer.companyName" placeholder="Company Name" #filterName name="CompanyName" />
+  </div>
+  <div>
+    <label>Contact Name:</label>
+    <input [(ngModel)]="customer.contactName" placeholder="Contact Name">
+  </div>
+  <div>
+    <label>Contact Title:</label>
+    <input [(ngModel)]="customer.contactTitle" placeholder="Contact Title">
+  </div>
+  <div *ngIf="customer">
+    <app-customer-details [customer]="customer"></app-customer-details>
+  </div>
+
+</div>
