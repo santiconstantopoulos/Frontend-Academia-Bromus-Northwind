@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { Customer } from '../models/customer';
 import { CustomerService } from '../services/customer.service';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-customer',
@@ -8,9 +9,15 @@ import { CustomerService } from '../services/customer.service';
   styleUrls: ['./customer.component.css']
 })
 
+
+
+
 export class CustomerComponent {
   constructor(private customerService: CustomerService) { }
 
+  showAll = false;
+  filteredCustomers: Customer[] = [];
+  searchTerm: string= '';
   Customers: Customer[] = [];
   selectedCustomer?: Customer;
   customerToEdit: Customer = {
@@ -39,9 +46,7 @@ export class CustomerComponent {
   }
 
   createCustomer(): void {
-    if (!this.customerToEdit || !this.customerToEdit.customerId){
-      return;
-    }
+    //console.log("Aca entra");
     this.customerService.addCustomer(this.customerToEdit)
       .subscribe(customer => {
         this.Customers.push(customer);
@@ -82,6 +87,25 @@ export class CustomerComponent {
           }
         });
     }
+  }
+
+  filterCustomers(): void {
+    if (!this.searchTerm) {
+      this.filteredCustomers = this.Customers;
+    } else {
+      const searchTerm = this.searchTerm.toLowerCase();
+      this.filteredCustomers = this.Customers.filter(customer => {
+        return (
+          customer.companyName.toLowerCase().includes(searchTerm) ||
+          customer.contactName.toLowerCase().includes(searchTerm)
+        );
+      });
+    }
+  }
+  
+  showAllCustomers(): void {
+    this.showAll = true;
+    this.filterCustomers();
   }
 
 

@@ -1,107 +1,124 @@
-<p> Customers </p>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!-- Agregar una clase CSS al formulario para reducir su ancho y centrarlo en la pantalla -->
-<form class="customer-form">
-  
-  <label>
-    Nombre de la Empresa:
-    <input type="text" 
-           name="nombreEmpresa" 
-           [(ngModel)]="customerToEdit.companyName" 
-           required>
-  </label>
-  <label>
-    Nombre de Contacto:
-    <input type="email" 
-           name="nombreContacto" 
-           [(ngModel)]="customerToEdit.contactName" 
-           required>
-  </label>
-  <label>
-    Titulo del Cliente:
-    <input type="text" 
-           name="tituloCliente" 
-           [(ngModel)]="customerToEdit.contactTitle" 
-           required>
-  </label>
-  <label>
-    Adress:
-    <input type="text" 
-           name="adress" 
-           [(ngModel)]="customerToEdit.adress" 
-           required>
-  </label>
-  <label>
-    City:
-    <input type="email" 
-           name="city" 
-           [(ngModel)]="customerToEdit.city" 
-           required>
-  </label>
-  <label>
-    Región:
-    <input type="text" 
-           name="region" 
-           [(ngModel)]="customerToEdit.region" 
-           required>
-  </label>
-  <label>
-    Postal Code:
-    <input type="text" 
-           name="postalCode" 
-           [(ngModel)]="customerToEdit.postalCode" 
-           required>
-  </label>
-  <label>
-    Country:
-    <input type="text" 
-           name="country" 
-           [(ngModel)]="customerToEdit.country" 
-           required>
-  </label>
-  <label>
-    Phone:
-    <input type="text" 
-           name="phone" 
-           [(ngModel)]="customerToEdit.phone" 
-           required>
-  </label>
-  <label>
-    Fax:
-    <input type="text" 
-           name="fax" 
-           [(ngModel)]="customerToEdit.fax" 
-           required>
-  </label>
-  
-  <button type="button" 
-          (click)="createCustomer()">
-    Agregar cliente
-  </button>
-</form>
+<button id="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('show')"><i class="material-icons">add</i> </button>
+
+<div class="sidebar">
+  <button id="sidebar-close" onclick="document.querySelector('.sidebar').classList.remove('show')"style="background-color: red; color: white;">
+    <i class="material-icons">close</i> </button>
+  <form class="customer-form">
+    <label>
+      Nombre de la Empresa:
+      <input type="text" 
+             name="nombreEmpresa" 
+             [(ngModel)]="customerToEdit.companyName" 
+             required>
+    </label>
+    <label>
+      Nombre de Contacto:
+      <input type="email" 
+             name="nombreContacto" 
+             [(ngModel)]="customerToEdit.contactName" 
+             required>
+    </label>
+    <label>
+      Titulo del Cliente:
+      <input type="text" 
+             name="tituloCliente" 
+             [(ngModel)]="customerToEdit.contactTitle" 
+             required>
+    </label>
+    <label>
+      Adress:
+      <input type="text" 
+             name="adress" 
+             [(ngModel)]="customerToEdit.adress" 
+             required>
+    </label>
+    <label>
+      City:
+      <input type="email" 
+             name="city" 
+             [(ngModel)]="customerToEdit.city" 
+             required>
+    </label>
+    <label>
+      Región:
+      <input type="text" 
+             name="region" 
+             [(ngModel)]="customerToEdit.region" 
+             required>
+    </label>
+    <label>
+      Postal Code:
+      <input type="text" 
+             name="postalCode" 
+             [(ngModel)]="customerToEdit.postalCode" 
+             required>
+    </label>
+    <label>
+      Country:
+      <input type="text" 
+             name="country" 
+             [(ngModel)]="customerToEdit.country" 
+             required>
+    </label>
+    <label>
+      Phone:
+      <input type="text" 
+             name="phone" 
+             [(ngModel)]="customerToEdit.phone" 
+             required>
+    </label>
+    <label>
+      Fax:
+      <input type="text" 
+             name="fax" 
+             [(ngModel)]="customerToEdit.fax" 
+             required>
+    </label>
+
+    <button type="button" 
+            (click)="createCustomer()">
+      Agregar cliente
+    </button>
+  </form>
+</div>
 
 
-<!-- Agregar una clase CSS a la tabla para reducir su ancho y hacerla más minimalista -->
+
+<button (click)="showAllCustomers()" *ngIf="!showAll">Mostrar Clientes</button>
+<label class="search-label">Buscar por nombre de empresa o contacto:
+  <input type="text" name="search" (input)="filterCustomers()" [(ngModel)]="searchTerm" class="search-input" />
+</label>
 <table class="minimalist-table">
+  
   <thead>
+    
     <tr>
+      <th>Id del Cliente</th>
       <th>Nombre Empresa</th>
       <th>Nombre Titular</th>
-
       <th>Acciones</th>
     </tr>
+    
   </thead>
   <tbody>
-    <tr *ngFor="let customer of Customers">
+    <tr>
+      <td colspan="3">
+        
+      </td>
+    </tr>
+    <tr *ngFor="let customer of filteredCustomers">
+      <td>{{customer.customerId}}</td>
       <td>{{customer.companyName}}</td>
       <td>{{customer.contactName}}</td>
 
       <td>
         <button (click)="updateCustomer(customer)">Editar</button>
-        <button (click)="deleteCustomer(customer)" [disabled]="isDeleting">Eliminar</button>
+        <button (click)="deleteCustomer(customer)" [disabled]="isDeleting" style="background-color: red; color: white;">
+          <i class="material-icons">delete</i> 
+        </button>
       </td>
     </tr>
   </tbody>
 </table>
-
-

@@ -42,6 +42,7 @@ export class CustomerService {
   }
 
   public addCustomer(customer: Customer): Observable<Customer> {
+    console.log("aca entra tambien");
     return this.http.post<Customer>(this.customerUrl, customer);
   }
 

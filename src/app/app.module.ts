@@ -6,6 +6,7 @@ import { CustomerService } from './services/customer.service'
 import { CustomerComponent } from './customers/customer.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
   ],
   declarations: [
     AppComponent,
+    FilterPipe,
     CustomerComponent,
     CustomerDetailsComponent
   ],
