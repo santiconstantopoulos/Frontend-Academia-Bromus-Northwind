@@ -28,9 +28,7 @@ export class CustomerService {
     return this.http.get<Customer[]>(this.customerUrl);
   }
 
-
-
-  updateCustomer(customer: Customer): Observable<Customer> {
+  public updateCustomer(customer: Customer): Observable<Customer> {
     const url = `${this.customerUrl}/${customer.customerId}`;
     const { customerId, ...rest } = customer;
     return this.http.put<Customer>(url, rest);

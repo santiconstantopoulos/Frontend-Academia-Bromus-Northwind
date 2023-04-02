@@ -3,10 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CustomerService } from './services/customer.service'
-import { CustomerComponent } from './customers/customer.component';
-import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { FormsModule } from '@angular/forms';
-import { FilterPipe } from './filter.pipe';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 
 @NgModule({
   imports: [
@@ -16,11 +14,9 @@ import { FilterPipe } from './filter.pipe';
   ],
   declarations: [
     AppComponent,
-    FilterPipe,
-    CustomerComponent,
-    CustomerDetailsComponent
+    EditCustomerComponent
   ],
-  providers: [CustomerService],
+  providers: [],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
