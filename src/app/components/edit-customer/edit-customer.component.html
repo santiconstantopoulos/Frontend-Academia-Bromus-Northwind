@@ -1,0 +1,42 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+
+
+
+<div *ngIf="customer">
+  <h2>{{ customer.customerId }}</h2>
+  <div>
+    Company Name:
+    <input [(ngModel)]="customer.companyName" placeholder="companyName" />
+  </div>
+  <div>
+    Contact Name:
+    <input [(ngModel)]="customer.contactName" placeholder="contactName" />
+  </div>
+  <div>
+    Contact Title:
+    <input [(ngModel)]="customer.contactTitle" placeholder="contactTitle" />
+  </div>
+  <div>
+    Country:
+    <input [(ngModel)]="customer.country" placeholder="country" />
+  </div>
+  <div>
+    City:
+    <input [(ngModel)]="customer.city" placeholder="city" />
+  </div>
+
+  <div>
+    Adress:
+    <input [(ngModel)]="customer.adress" placeholder="adress" />
+  </div>
+  <div>
+    Phone:
+    <input [(ngModel)]="customer.phone" placeholder="phone" />
+  </div>
+  <button (click)="updateCustomer(customer)" *ngIf="customer.customerId">Save</button>
+  <button (click)="createCustomer(customer)">Create</button>
+</div>

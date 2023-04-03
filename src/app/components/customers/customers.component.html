@@ -1,0 +1,45 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<button id="sidebar-toggle" (click)="createCustomer()" ><i class="material-icons">add</i> </button>
+
+<app-edit-customer
+[customer]="customerToEdit"
+(customersUpdated)="updateCustomerList($event)"
+></app-edit-customer>
+
+<table>
+    <thead>
+      <th>Customer Id</th>
+      <th>Company</th>
+      <th>Contact Name</th>
+      <th>Contact Title</th>
+      <th>adress</th>
+      <th>country</th>
+      <th>city</th>
+      <th>region</th>
+      <th>postalCode</th>
+      <th>region</th>
+
+
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{ customer.customerId }}</td>
+        <td>{{ customer.companyName }}</td>
+        <td>{{ customer.contactName }}</td>
+        <td>{{ customer.contactTitle }}</td>
+        <td>{{ customer.adress}}</td>
+        <td>{{ customer.country }}</td>
+        <td>{{ customer.city }}</td>
+        <td>{{ customer.region }}</td>
+
+
+        <td><button (click)="editCustomer(customer)">Edit</button></td>
+
+        <button (click)="deleteCustomer(customer)" *ngIf="customer.customerId">Delete</button>
+
+      </tr>
+    </tbody>
+  </table>
+

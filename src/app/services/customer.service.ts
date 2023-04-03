@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
 import { Customer } from '../models/customer';
 
 
@@ -30,13 +29,14 @@ export class CustomerService {
 
   public updateCustomer(customer: Customer): Observable<Customer> {
     const url = `${this.customerUrl}/${customer.customerId}`;
-    const { customerId, ...rest } = customer;
-    return this.http.put<Customer>(url, rest);
+    console.log("Actualizando");
+    return this.http.put<Customer>(url, customer);
   }
   
-  public deleteCustomer(customerId: string): Observable<any> {
+  public deleteCustomer(customerId?: string): Observable<Customer> {
+    console.log("Eliminando");
     const url = `${this.customerUrl}/${customerId}`; 
-    return this.http.delete<void>(url, this.httpOptions);
+    return this.http.delete<Customer>(url, this.httpOptions);
   }
 
   public addCustomer(customer: Customer): Observable<Customer> {
