@@ -35,9 +35,9 @@
         <td>{{ customer.region }}</td>
 
 
-        <td><button (click)="editCustomer(customer)">Edit</button></td>
+        <td><button (click)="editCustomer(customer)"><i class="material-icons">edit</i></button></td>
 
-        <button (click)="deleteCustomer(customer)" *ngIf="customer.customerId">Delete</button>
+        <button (click)="deleteCustomer(customer)" *ngIf="customer.customerId"><i class="material-icons">delete</i></button>
 
       </tr>
     </tbody>

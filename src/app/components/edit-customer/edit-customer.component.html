@@ -37,6 +37,5 @@
     Phone:
     <input [(ngModel)]="customer.phone" placeholder="phone" />
   </div>
-  <button (click)="updateCustomer(customer)" *ngIf="customer.customerId">Save</button>
-  <button (click)="createCustomer(customer)">Create</button>
+  <button (click)="updateCustomer(customer)" *ngIf="customer.customerId"><i class="material-icons">save</i></button>
 </div>

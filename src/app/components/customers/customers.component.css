@@ -1,140 +1,132 @@
+/* Estilo para el botón */
+button {
+  background-color: #332e2e;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: all 0.3s ease;
+}
 
+/* Estilo para el botón de editar */
+button.edit {
+  background-color: #332e2e;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: all 0.3s ease;
+}
 
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -260px;
-    width: 250px;
-    height: 80%;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    transition: left 0.5s ease-in-out;
-    border: 1px solid #0077ff;
-    overflow-y: scroll;
-    }
-    
-  
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-  
-    ::-webkit-scrollbar-thumb {
-      background-color: #0077ff;
-      border-radius: 3px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      background-color: #fff;
-    }
-  
-  
-  
-    .sidebar.show {
-    left: 0;
-    }
-    
-    .customer-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    }
-    
-    .customer-form label {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    width: 100%;
-    }
-    
-    .customer-form label input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    }
-    
-    .customer-form label input:focus {
-    outline: none;
-    border-color: #0077ff;
-    }
-    
-    .customer-form button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #221e1e;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    }
-  
-    .customer-form button:hover {
-      background-color: #032244;
-      }
-    
-    .customer-form button:hover {
-    background-color: #032244;
-    }
-    
-    .minimalist-table {
-    width: 50%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    }
-    
-    .minimalist-table th, .minimalist-table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #032244;
-    }
-    
-    .minimalist-table th {
-    font-weight: bold;
-    }
-    
-    .minimalist-table td:last-child {
-    text-align: center;
-    }
-    
-    .minimalist-table button {
-    padding: 8px 10px;
-    background-color: #221e1e;
-    color: #ffffff;
-    border: #0077ff;
-    border-radius: 10px;
-    cursor: pointer;
-    }
-    
-    .minimalist-table button:hover {
-    background-color: #032244;
-    }
-  
-    .material-icons {
-      color: white;
-    }
-  
-    .material-icons:hover {
-      color: rgb(165, 25, 25);
-    }
-  
-    .search-label {
-      display: block;
-      text-align: center;
-    }
-    
-    .search-input {
-      display: block;
-      margin: 0 auto;
-      padding: 5px 10px;
-      border: 1px solid gray;
-      border-radius: 10px;
-      width: 30%;
-      box-sizing: border-box;
-    }
-    
-    .search-input::placeholder {
-      color: rgb(148, 25, 25);
-      font-style: italic;
-    }
+/* Estilo para el botón de editar en hover */
+button.edit:hover {
+  background-color: #005eff;
+  color: white;
+}
+
+/* Estilo para el botón de eliminar */
+button.delete {
+  background-color: #e00e0e;
+  color: rgb(235, 8, 8);
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Estilo para el botón de eliminar en hover */
+button.delete:hover {
+  background-color: #d10000;
+  color: rgb(184, 11, 11);
+}
+
+/* Estilo para la tabla */
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo para la cabecera de la tabla */
+th {
+  background-color: #332e2e;
+  color: white;
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Estilo para las celdas de la tabla */
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Estilo para las filas impares de la tabla */
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+/* Estilo para las filas pares de la tabla */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Estilo para el ícono del botón */
+.material-icons {
+  font-size: 18px;
+}
+
+/* Estilo para el texto en general */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo para el botón de eliminar */
+button.delete {
+  margin-top: 2px;
+  float: right;
+}
+
+/* Estilo para el botón de editar y eliminar */
+td button {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-top: 0px;
+  float: center;
+}
+
+/* Estilo para el botón de editar y eliminar en hover */
+td button:hover {
+  background-color: #0d2e66;
+  color: white;
+}
+
+/* Estilo para las filas de la tabla */
+tr {
+  background-color: #fff;
+}
+
+/* Estilo para las filas de la tabla en hover */
+tr:hover {
+  background-color: #f2f2f2;
+}
+/* Estilo para las filas de la tabla en hover */
+tr:hover {
+  background-color: #d6d6d6;
+}

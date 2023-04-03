@@ -22,7 +22,7 @@ export class CustomersComponent {
 
   createCustomer() {
     this.customerToEdit = new Customer();
-    this.customerToEdit.customerId= "FDSGD";
+    this.customerToEdit.customerId= " ";
     
   }
 
