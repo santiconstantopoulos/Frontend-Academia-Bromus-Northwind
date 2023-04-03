@@ -29,18 +29,15 @@ export class CustomerService {
 
   public updateCustomer(customer: Customer): Observable<Customer> {
     const url = `${this.customerUrl}/${customer.customerId}`;
-    console.log("Actualizando");
     return this.http.put<Customer>(url, customer);
   }
   
   public deleteCustomer(customerId?: string): Observable<Customer> {
-    console.log("Eliminando");
     const url = `${this.customerUrl}/${customerId}`; 
     return this.http.delete<Customer>(url, this.httpOptions);
   }
 
   public addCustomer(customer: Customer): Observable<Customer> {
-    console.log("aca entra tambien");
     return this.http.post<Customer>(this.customerUrl, customer);
   }
 

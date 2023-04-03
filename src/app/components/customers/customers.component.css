@@ -1,3 +1,16 @@
+
+.form-group{
+  border-color: #EB2000;
+  border-radius: 1em;
+}
+
+.form-list-group{
+  border-color: #f30000;
+  border-radius: 1em;
+
+}
+
+
 /* Estilo para el botón */
 button {
   background-color: #332e2e;
@@ -26,14 +39,14 @@ button.edit {
 
 /* Estilo para el botón de editar en hover */
 button.edit:hover {
-  background-color: #005eff;
+  background-color: #032583;
   color: white;
 }
 
 /* Estilo para el botón de eliminar */
 button.delete {
-  background-color: #e00e0e;
-  color: rgb(235, 8, 8);
+  background-color: #032583;
+  color: #032583;
   border: none;
   border-radius: 25px;
   padding: 10px;
@@ -44,12 +57,13 @@ button.delete {
 
 /* Estilo para el botón de eliminar en hover */
 button.delete:hover {
-  background-color: #d10000;
-  color: rgb(184, 11, 11);
+  background-color: #032583;
+  color: #032583;
 }
 
 /* Estilo para la tabla */
 table {
+
   border-collapse: collapse;
   width: 50%;
   margin-bottom: 10px;
@@ -58,7 +72,8 @@ table {
 
 /* Estilo para la cabecera de la tabla */
 th {
-  background-color: #332e2e;
+
+  background-color: #032583;
   color: white;
   text-align: left;
   padding: 10px;
@@ -68,20 +83,13 @@ th {
 
 /* Estilo para las celdas de la tabla */
 td {
+
   border: 1px solid #ddd;
   padding: 10px;
   font-size: 14px;
 }
 
-/* Estilo para las filas impares de la tabla */
-tr:nth-child(odd) {
-  background-color: #f2f2f2;
-}
 
-/* Estilo para las filas pares de la tabla */
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
 
 /* Estilo para el ícono del botón */
 .material-icons {
@@ -90,7 +98,8 @@ tr:nth-child(even) {
 
 /* Estilo para el texto en general */
 body {
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 /* Estilo para el botón de eliminar */
@@ -113,7 +122,7 @@ td button {
 
 /* Estilo para el botón de editar y eliminar en hover */
 td button:hover {
-  background-color: #0d2e66;
+  background-color: #032583;
   color: white;
 }
 
@@ -128,5 +137,5 @@ tr:hover {
 }
 /* Estilo para las filas de la tabla en hover */
 tr:hover {
-  background-color: #d6d6d6;
+  background-color: #032583;
 }

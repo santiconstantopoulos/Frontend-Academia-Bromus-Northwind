@@ -39,4 +39,5 @@ export class CustomersComponent {
   editCustomer(customer: Customer) {
     this.customerToEdit = customer;
   }
+
 }

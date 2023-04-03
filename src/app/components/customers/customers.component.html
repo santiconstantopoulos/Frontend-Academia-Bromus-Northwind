@@ -1,26 +1,24 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<button id="sidebar-toggle" (click)="createCustomer()" ><i class="material-icons">add</i> </button>
+<button id="sidebar-toggle" (click)="createCustomer()"><i class="material-icons">add</i> </button>
 
-<app-edit-customer
-[customer]="customerToEdit"
-(customersUpdated)="updateCustomerList($event)"
-></app-edit-customer>
+<app-edit-customer [customer]="customerToEdit" (customersUpdated)="updateCustomerList($event)"></app-edit-customer>
 
-<table>
+
+<div class="form-list-group">
+  <table>
     <thead>
-      <th>Customer Id</th>
+      <th>CustomerID</th>
       <th>Company</th>
       <th>Contact Name</th>
       <th>Contact Title</th>
-      <th>adress</th>
-      <th>country</th>
-      <th>city</th>
-      <th>region</th>
-      <th>postalCode</th>
-      <th>region</th>
-
-
+      <th>Address</th>
+      <th>City</th>
+      <th>Region</th>
+      <th>PostalCode</th>
+      <th>Country</th>
+      <th>Phone</th>
+      <th>Fax</th>
       <th></th>
     </thead>
     <tbody>
@@ -30,16 +28,17 @@
         <td>{{ customer.contactName }}</td>
         <td>{{ customer.contactTitle }}</td>
         <td>{{ customer.adress}}</td>
-        <td>{{ customer.country }}</td>
         <td>{{ customer.city }}</td>
         <td>{{ customer.region }}</td>
-
+        <td>{{ customer.postalCode }}</td>
+        <td>{{ customer.country }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.fax}}</td>
 
         <td><button (click)="editCustomer(customer)"><i class="material-icons">edit</i></button></td>
-
-        <button (click)="deleteCustomer(customer)" *ngIf="customer.customerId"><i class="material-icons">delete</i></button>
-
+        <button (click)="deleteCustomer(customer)" *ngIf="customer.customerId"><i
+            class="material-icons">delete</i></button>
       </tr>
     </tbody>
   </table>
-
+</div>

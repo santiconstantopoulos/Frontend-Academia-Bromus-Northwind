@@ -1,41 +1,46 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
-
-
-
-
-
-<div *ngIf="customer">
+<div *ngIf="customer" class="form-group">
   <h2>{{ customer.customerId }}</h2>
   <div>
-    Company Name:
-    <input [(ngModel)]="customer.companyName" placeholder="companyName" />
+    Company Name
+    <input [(ngModel)]="customer.companyName" placeholder="Ej: McDonald's" />
   </div>
   <div>
-    Contact Name:
-    <input [(ngModel)]="customer.contactName" placeholder="contactName" />
+    Contact Name
+    <input [(ngModel)]="customer.contactName" placeholder="Ej: Ronald McDonald" />
   </div>
   <div>
-    Contact Title:
-    <input [(ngModel)]="customer.contactTitle" placeholder="contactTitle" />
+    Contact Title
+    <input [(ngModel)]="customer.contactTitle" placeholder="Ej: Empresario" />
   </div>
   <div>
-    Country:
-    <input [(ngModel)]="customer.country" placeholder="country" />
+    Adress
+    <input [(ngModel)]="customer.adress" placeholder="First Avenue 3246" />
   </div>
   <div>
-    City:
-    <input [(ngModel)]="customer.city" placeholder="city" />
-  </div>
-
-  <div>
-    Adress:
-    <input [(ngModel)]="customer.adress" placeholder="adress" />
+    City
+    <input [(ngModel)]="customer.city" placeholder="New York City" />
   </div>
   <div>
-    Phone:
-    <input [(ngModel)]="customer.phone" placeholder="phone" />
+    Region
+    <input [(ngModel)]="customer.region" placeholder="New York" />
+  </div>
+  <div>
+    Postal Code
+    <input [(ngModel)]="customer.city" placeholder="75204" />
+  </div>
+  <div>
+    Country
+    <input [(ngModel)]="customer.country" placeholder="Ej: USA" />
+  </div>
+  <div>
+    Phone
+    <input [(ngModel)]="customer.phone" placeholder="(2945)-345263" />
+  </div>
+  <div>
+    Fax
+    <input [(ngModel)]="customer.fax" placeholder="(2945)-3452639" />
   </div>
   <button (click)="updateCustomer(customer)" *ngIf="customer.customerId"><i class="material-icons">save</i></button>
 </div>
