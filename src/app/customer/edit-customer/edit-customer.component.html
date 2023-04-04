@@ -15,8 +15,8 @@
     <input [(ngModel)]="customer.contactTitle" placeholder="Ej: Empresario" />
   </div>
   <div>
-    Adress
-    <input [(ngModel)]="customer.adress" placeholder="First Avenue 3246" />
+    Address
+    <input [(ngModel)]="customer.address" placeholder="First Avenue 3246" />
   </div>
   <div>
     City
@@ -28,7 +28,7 @@
   </div>
   <div>
     Postal Code
-    <input [(ngModel)]="customer.city" placeholder="75204" />
+    <input [(ngModel)]="customer.postalCode" placeholder="75204" />
   </div>
   <div>
     Country
@@ -43,4 +43,6 @@
     <input [(ngModel)]="customer.fax" placeholder="(2945)-3452639" />
   </div>
   <button (click)="updateCustomer(customer)" *ngIf="customer.customerId"><i class="material-icons">save</i></button>
+  <button (click)="createCustomer(customer)" ><i class="material-icons">add</i></button>
+
 </div>

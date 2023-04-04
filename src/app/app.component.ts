@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Customer } from './models/customer';
-import { CustomerService } from './services/customer.service';
+import { Customer } from './customer/models/customer';
+import { CustomerService } from './customer/services/customer.service';
 
 @Component({
   selector: 'app-root',

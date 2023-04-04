@@ -14,31 +14,27 @@
       <th>Contact Title</th>
       <th>Address</th>
       <th>City</th>
-      <th>Region</th>
-      <th>PostalCode</th>
-      <th>Country</th>
-      <th>Phone</th>
-      <th>Fax</th>
+      <th>    Actions</th>
+
       <th></th>
     </thead>
     <tbody>
-      <tr *ngFor="let customer of customers">
+      <tr *ngFor="let customer of getCustomersToDisplay()">
         <td>{{ customer.customerId }}</td>
         <td>{{ customer.companyName }}</td>
         <td>{{ customer.contactName }}</td>
         <td>{{ customer.contactTitle }}</td>
-        <td>{{ customer.adress}}</td>
+        <td>{{ customer.address}}</td>
         <td>{{ customer.city }}</td>
-        <td>{{ customer.region }}</td>
-        <td>{{ customer.postalCode }}</td>
-        <td>{{ customer.country }}</td>
-        <td>{{ customer.phone }}</td>
-        <td>{{ customer.fax}}</td>
 
         <td><button (click)="editCustomer(customer)"><i class="material-icons">edit</i></button></td>
-        <button (click)="deleteCustomer(customer)" *ngIf="customer.customerId"><i
-            class="material-icons">delete</i></button>
+        <td><button (click)="deleteCustomer(customer)" *ngIf="customer.customerId"><i class="material-icons">delete</i></button></td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<div>
+  <button [disabled]="currentPage === 0" (click)="currentPage = currentPage - 1">Previous</button>
+  <button [disabled]="!hasMoreCustomers || currentPage === (customers.length / pageSize - 1)" (click)="currentPage = currentPage + 1" *ngIf="hasMoreCustomers">Next</button>
 </div>

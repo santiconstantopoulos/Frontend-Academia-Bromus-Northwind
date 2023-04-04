@@ -3,7 +3,7 @@ export class Customer {
     companyName?: string;
     contactName?: string;
     contactTitle?: string;
-    adress?: string;
+    address?: string;
     city?: string;
     region?: string;
     postalCode?: string;
