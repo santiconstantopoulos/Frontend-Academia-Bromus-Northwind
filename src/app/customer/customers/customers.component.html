@@ -1,40 +1,63 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
 
-<button id="sidebar-toggle" (click)="createCustomer()"><i class="material-icons">add</i> </button>
+<button id="sidebar-toggle" (click)="createCustomer()">
+  <i class="material-icons">add</i> Agregar Cliente
+</button>
 
-<app-edit-customer [customer]="customerToEdit" (customersUpdated)="updateCustomerList($event)"></app-edit-customer>
+<app-edit-customer
+  [customer]="customerToEdit"
+  (customersUpdated)="updateCustomerList($event)"
+></app-edit-customer>
 
+<table class="container">
+  <thead>
+    <th class="categoria">Company</th>
+    <th class="categoria">Contact Name</th>
+    <th class="categoria">Contact Title</th>
+    <th class="categoria">Address</th>
+    <th class="categoria">City</th>
+    <th class="categoria">Actions</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of getCustomersToDisplay()">
+      <td class="categorias">{{ customer.companyName }}</td>
+      <td class="categorias">{{ customer.contactName }}</td>
+      <td class="categorias">{{ customer.contactTitle }}</td>
+      <td class="categorias">{{ customer.address }}</td>
+      <td class="categorias">{{ customer.city }}</td>
 
-<div class="form-list-group">
-  <table>
-    <thead>
-      <th>CustomerID</th>
-      <th>Company</th>
-      <th>Contact Name</th>
-      <th>Contact Title</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>    Actions</th>
+      <td>
+        <button (click)="editCustomer(customer)">
+          <i class="material-icons">edit</i>
+        </button>
+      </td>
+      <td>
+        <button (click)="deleteCustomer(customer)" *ngIf="customer.customerId">
+          <i class="material-icons">delete</i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-      <th></th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let customer of getCustomersToDisplay()">
-        <td>{{ customer.customerId }}</td>
-        <td>{{ customer.companyName }}</td>
-        <td>{{ customer.contactName }}</td>
-        <td>{{ customer.contactTitle }}</td>
-        <td>{{ customer.address}}</td>
-        <td>{{ customer.city }}</td>
-
-        <td><button (click)="editCustomer(customer)"><i class="material-icons">edit</i></button></td>
-        <td><button (click)="deleteCustomer(customer)" *ngIf="customer.customerId"><i class="material-icons">delete</i></button></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div>
-  <button [disabled]="currentPage === 0" (click)="currentPage = currentPage - 1">Previous</button>
-  <button [disabled]="!hasMoreCustomers || currentPage === (customers.length / pageSize - 1)" (click)="currentPage = currentPage + 1" *ngIf="hasMoreCustomers">Next</button>
+<div class="btn-container">
+  <button
+    [disabled]="currentPage === 0"
+    (click)="currentPage = currentPage - 1"
+  >
+    Previous
+  </button>
+  <button
+    [disabled]="
+      !hasMoreCustomers || currentPage === customers.length / pageSize - 1
+    "
+    (click)="currentPage = currentPage + 1"
+    *ngIf="hasMoreCustomers"
+  >
+    Next
+  </button>
 </div>

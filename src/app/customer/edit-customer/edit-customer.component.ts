@@ -10,19 +10,15 @@ import { CustomerService } from '../services/customer.service';
 export class EditCustomerComponent implements OnInit {
   @Input() customer?: Customer;
   @Output() customersUpdated = new EventEmitter<Customer[]>();
-  
+
   constructor(private customerService: CustomerService) {}
 
   ngOnInit(): void {}
 
   updateCustomer(customer: Customer) {
-    this.customerService
-      .updateCustomer(customer)
-      .subscribe();
+    this.customerService.updateCustomer(customer).subscribe();
   }
   createCustomer(customer: Customer) {
-    this.customerService
-      .addCustomer(customer)
-      .subscribe();
+    this.customerService.addCustomer(customer).subscribe();
   }
 }

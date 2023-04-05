@@ -1,52 +1,70 @@
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  
-  table {
-  border-collapse:separate;
-  width: 30%;
-  max-width: 500px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
 
-  min-height: 500;
-  max-height: 500px;
-  overflow-y: auto;
+table {
+  border-collapse: separate;
+  width: 30%;
   margin-bottom: 10px;
   margin-left: 10px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  
-  th {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+th {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #1a337a;
   color: white;
-  min-height:500px;
-  max-width: 500px;
   text-align: center;
   padding: 10px;
-  font-weight:normal;
+  font-weight: normal;
   font-size: 20px;
-  }
-  
-  td {
+}
+
+.container {
+  position: absolute;
+  width: 500px; /* Ancho absoluto */
+  height: 300px; /* Altura absoluta */
+  top: 50%; /* Centrar verticalmente */
+  left: 30%; /* Centrar horizontalmente */
+  transform: translate(-50%, -50%); /* Centrar absolutamente */
+}
+
+.btn-container {
+  position: absolute;
+  bottom: 0;
+  right: -80;
+}
+
+botones-paginas {
+  margin-top: 100px;
+}
+
+final-table {
+  width: 500px;
+}
+
+td {
   border: 1px solid #000000;
   padding: 5px;
   font-size: 14px;
-  }
-  
-  tr {
+}
+
+tr {
   background-color: transparent;
   max-width: 500px;
-  min-height:500px;
+  min-height: 500px;
   max-height: 500px;
+  height: 30px;
+}
 
-
-  }
-  
-  tr:hover {
+tr:hover {
   background-color: #f2f2f2;
-  }
-  
-  button {
+}
+
+button {
   background-color: transparent;
   color: #696262;
   border: 10pt;
@@ -56,15 +74,15 @@ body {
   cursor: pointer;
   margin-left: 15px;
   transition: all 0.3s ease;
-  }
+}
 
-  button:hover{
-    background-color: #032583;
-    transition: all 0.3s ease;
-    color: white;
-  }
-  
-  td button {
+button:hover {
+  background-color: #032583;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+td button {
   background-color: transparent;
   color: #696262;
   border: 5px;
@@ -75,15 +93,14 @@ body {
   margin-right: 8px;
   margin-top: 0px;
   float: center;
-  }
-  
-  td button:hover {
+}
+
+td button:hover {
   background-color: #032583;
   transition: all 0.3s ease;
   color: white;
-  }
-  
-  .material-icons {
+}
+
+.material-icons {
   font-size: 18px;
-  }
-  
+}

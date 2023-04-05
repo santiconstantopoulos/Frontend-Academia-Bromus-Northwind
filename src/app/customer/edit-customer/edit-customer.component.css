@@ -2,7 +2,8 @@ h2 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .form-group {
@@ -16,7 +17,8 @@ body {
 }
 
 input {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   width: 30%;
   padding: 0.5rem;
   display: flex;
@@ -40,6 +42,25 @@ button {
   transition: background-color 0.3s ease-in-out;
 }
 
+button-save {
+  margin-right: 50px;
+  margin-left: 30%;
+}
+
+button-add {
+  margin-right: 70px;
+  margin-left: 10%;
+}
+
+.container {
+  position: absolute;
+  width: 500px; /* Ancho absoluto */
+  height: 50px; /* Altura absoluta */
+  top: 5%; /* Centrar verticalmente */
+  left: 80%; /* Centrar horizontalmente */
+  transform: translate(-50%, -50%); /* Centrar absolutamente */
+}
+
 button:hover {
   background-color: #032583;
 }
@@ -53,7 +74,7 @@ button.delete:hover {
 }
 
 .material-icons {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
